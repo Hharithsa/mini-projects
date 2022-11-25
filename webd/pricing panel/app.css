@@ -1,0 +1,182 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body{
+    /* height: 100%; */
+    text-transform: uppercase;
+    text-align:center;
+    color: rgb(44, 44, 172);
+    min-height: 100vh;
+    background-color: #7b9dfc;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+}
+
+.panel{
+    background-color: white;
+    width: 100%;
+    max-width: 960px;
+    border-radius: 15px;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.pricing-plan{
+    flex-shrink: 1;
+    flex-basis: 30%;
+    padding:3%;
+}
+
+.pricing-plan:nth-of-type(1){
+    border-width: 1px;
+    border-color: blue;
+    border-style: none solid none none;
+}
+.pricing-plan:nth-of-type(2){
+    border-width: 1px;
+    border-color: blue;
+    border-style: none;
+}
+.pricing-plan:nth-of-type(3){
+    border-width: 1px;
+    border-color: blue;
+    border-style: none none none solid;
+}
+
+
+img{
+    width: 100%;
+}
+
+a{
+    text-decoration-line: none;
+}
+
+.pricing-header{
+    color:grey;
+    margin: 5% 5% 10% 5%;
+    padding-bottom: 20%;
+    border-style: none none solid none;
+    border-width: 1px;
+    border-color: blue;
+}
+
+.pricing-features-item{
+    margin:10%;
+    padding-bottom: 10%;
+    border-style: none none solid none;
+    border-color: blue;
+    border-width: 1px;
+}
+
+.pricing-price{
+    font-weight:700;
+    margin:5%;
+    display: inline-block;
+    font-size: 30px;
+    
+}
+
+.pricing-button{
+    border: 1px solid blue ;
+    border-radius: 13%;
+    padding: 6% 13%;
+    margin:5%;
+    display: inline-block;
+    transition: 0.7s;
+}
+
+.pricing-button:hover{
+    background-color: blue;
+    color:white;
+}
+
+.pricing-button:nth-of-type(2){
+    color:white;
+    background-color: blue;
+}
+
+
+html{
+   font-family: 'Open sans', sans-serif;
+   box-sizing: border-box;
+}
+
+@media (max-width: 900px){
+    .panel{
+        background-color: white;
+        width: 100%;
+        max-width: 1060px;
+        border-radius: 15px;
+        padding: 15px 25px;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+    .pricing-plan:nth-of-type(3){
+        border-width: 1px;
+        border-color: blue;
+        border-style: none none solid none;
+    }
+    .pricing-plan:nth-of-type(1){
+        border-width: 1px;
+        border-color: blue;
+        border-style: none none solid none;
+    }
+    .pricing-plan:nth-of-type(2){
+        border-width: 1px;
+        border-color: blue;
+        border-style: none none solid none;
+    }
+}

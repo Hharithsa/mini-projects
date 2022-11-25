@@ -1,0 +1,73 @@
+body{
+    background-color: rgb(241, 203, 209);
+    font-family: "Nunito",sans-serif;
+    font-weight:100;
+}
+
+#main{
+    
+    font-size: 1.5rem;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+#heading{
+    color:tomato;
+    font-size: 1.8rem;
+}
+
+#main li a{
+    color:white;
+    transition: color .4s;
+}
+
+#main li a:hover{
+    color:tomato;
+}
+
+h1{
+    color:white;
+    font-weight: 100;
+    font-size: 4em;
+    text-transform: uppercase;
+}
+span{
+    color:tomato;
+    text-transform: uppercase;
+}
+.imag{
+    max-width: 128px;
+    max-height: 128px;
+}
+.imagee{
+    object-fit: contain;
+}
+
+h2{
+    color:tomato;
+    font-weight: 100;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+p{
+    color:rgb(70, 15, 51);
+    text-align:center;
+    font-size: 1.1em;
+    letter-spacing: .8px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.navbar.scrolled{
+    background-color: purple;
+    transition: .5s;
+}
+
+@media (max-width:1260px){
+    h1{
+        color:white;
+        font-weight: 100;
+        font-size: 3em;
+    }
+}

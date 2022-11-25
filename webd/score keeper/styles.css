@@ -1,0 +1,20 @@
+.imag{
+    max-width: 600px;
+    height: 100vh;
+}
+body{
+    text-align: center;
+}
+
+#one{
+    background-color:rgb(45, 255, 108);
+}
+#two{
+    background-color:rgb(65, 78, 255);
+}
+#reset{
+    background-color:rgb(255, 65, 65);
+}
+span{
+    font-weight: 700;
+}
