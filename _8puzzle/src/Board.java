@@ -2,7 +2,7 @@ import edu.princeton.cs.algs4.StdOut;
 
 import java.util.ArrayList;
 
-public class Board {
+public class Board{
 
 
     private final int gridSize;
@@ -132,8 +132,10 @@ public class Board {
 
 
     public static void main(String[] args) {
-
-        int[][] arr = {{1, 2, 3}, {4, 5, 6}, {7, 8, 0}};
+        int[][] arr = {
+                {0, 2, 3},
+                {4, 5, 6},
+                {7, 8, 1}};
         Board b = new Board(arr);
         StdOut.println(b.toString());
 
@@ -145,6 +147,7 @@ public class Board {
         System.out.println("b.manhattan() = " + b.manhattan());
         System.out.println("b.twin().toString() = " + b.twin().toString());
     }
+
 }
 
 
