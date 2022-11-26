@@ -3,6 +3,7 @@ import edu.princeton.cs.algs4.MinPQ;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class Solver {
@@ -26,10 +27,10 @@ public class Solver {
         }
     }
 
-    public BoardNode solution = null;
+    private BoardNode solution = null;
     private Board initial = null;
 
-    public ArrayList<Board> solutionPath = null;
+    private ArrayList<Board> solutionPath = null;
 
     public Solver(Board initial) {
         if (initial == null) throw new IllegalArgumentException();
@@ -45,8 +46,6 @@ public class Solver {
             boardQ.insert(new BoardNode(initial, null, 0));
             do {
                 searchNode = boardQ.delMin();
-                solutionPath = new ArrayList<>();
-                solutionPath.add(searchNode.board);
                 if (!searchNode.board.isGoal()) {
                     neighbours = searchNode.board.neighbors();
                     for (Board n : neighbours) {
@@ -71,8 +70,8 @@ public class Solver {
 
         MinPQ<BoardNode> boardQa = new MinPQ<>();
         MinPQ<BoardNode> boardQb = new MinPQ<>();
-        BoardNode searchA ;
-        BoardNode searchB ;
+        BoardNode searchA;
+        BoardNode searchB;
         Iterable<Board> neighboursA;
         Iterable<Board> neighboursB;
 
@@ -118,6 +117,16 @@ public class Solver {
     }
 
     public Iterable<Board> solution() {
+        if (isSolvable()) {
+            solutionPath = new ArrayList<>();
+            BoardNode temp = solution;
+            while (temp != null) {
+                solutionPath.add(temp.board);
+                temp = temp.parent;
+            }
+            Collections.reverse(solutionPath);
+        }
+
         return solutionPath;
     }
 

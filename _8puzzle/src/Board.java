@@ -2,14 +2,16 @@ import edu.princeton.cs.algs4.StdOut;
 
 import java.util.ArrayList;
 
-public class Board{
+public class Board {
 
 
     private final int gridSize;
 
-    public int[][] grid;
+    private int[][] grid;
 
     public Board(int[][] tiles) {
+        if (tiles == null) throw new IllegalArgumentException();
+
         gridSize = tiles.length;
         grid = new int[gridSize][gridSize];
         System.arraycopy(tiles, 0, grid, 0, gridSize);
@@ -46,10 +48,14 @@ public class Board{
 
     public int manhattan() {
         int manhattanCount = 0;
+        int a, b;
         for (int i = 0; i < gridSize; i++) {
             for (int j = 0; j < gridSize; j++) {
                 if (grid[i][j] != 0) {
-                    manhattanCount += Math.abs((gridSize * i + j + 1) - grid[i][j]);
+                    a = (grid[i][j] - 1) / gridSize;
+                    b = (grid[i][j] - 1) % gridSize;
+                    manhattanCount += Math.abs(a - i);
+                    manhattanCount += Math.abs(b - j);
                 }
             }
         }
@@ -64,6 +70,7 @@ public class Board{
         if (this == y) return true;
         if (y == null || y.getClass() != this.getClass()) return false;
         Board that = (Board) y;
+        if (this.gridSize != that.gridSize) return false;
         for (int i = 0; i < gridSize; i++) {
             for (int j = 0; j < gridSize; j++) {
                 if (grid[i][j] != that.grid[i][j]) return false;
@@ -132,20 +139,7 @@ public class Board{
 
 
     public static void main(String[] args) {
-        int[][] arr = {
-                {0, 2, 3},
-                {4, 5, 6},
-                {7, 8, 1}};
-        Board b = new Board(arr);
-        StdOut.println(b.toString());
 
-        Iterable<Board> neighbours = b.neighbors();
-        for (Board n : neighbours) {
-            StdOut.println(n.toString());
-        }
-        System.out.println("b.hamming() = " + b.hamming());
-        System.out.println("b.manhattan() = " + b.manhattan());
-        System.out.println("b.twin().toString() = " + b.twin().toString());
     }
 
 }
